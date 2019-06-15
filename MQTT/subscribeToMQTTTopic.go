@@ -45,8 +45,5 @@ func SubscribeToMQTTTopic(url string,clientID string, mqttTopic string){
 }
 
 
-func main()  {
-	subscribeToMQTTTopic("tcp://localhost:1883","sub","test")
-}
- 
+
 
