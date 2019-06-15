@@ -19,7 +19,7 @@ var f MQTT.MessageHandler = func(client MQTT.Client, msg MQTT.Message) {
 	//token := client.Publish("nn/result", 0, false, text)
 	//token.Wait()
 }
-func subscribeToMQTTTopic(url string,clientID string, mqttTopic string){
+func SubscribeToMQTTTopic(url string,clientID string, mqttTopic string){
 	knt = 0
 	c := make(chan os.Signal, 1)
 	signal.Notify(c, os.Interrupt, syscall.SIGTERM)
