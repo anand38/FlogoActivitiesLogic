@@ -1,4 +1,4 @@
-package MQTT
+package main
 
 import (
 	"fmt"
@@ -43,31 +43,7 @@ func subscribeToMQTTTopic(url string,clientID string, mqttTopic string){
 	}
 	<-c
 }
-/*
-func main() {
-	knt = 0
-	c := make(chan os.Signal, 1)
-	signal.Notify(c, os.Interrupt, syscall.SIGTERM)
 
-	opts := MQTT.NewClientOptions().AddBroker("tcp://localhost:1883")
-	opts.SetClientID("sub")
-	opts.SetDefaultPublishHandler(f)
-	topic := "test"
-
-	opts.OnConnect = func(c MQTT.Client) {
-		if token := c.Subscribe(topic, 0, f); token.Wait() && token.Error() != nil {
-			panic(token.Error())
-		}
-	}
-	client := MQTT.NewClient(opts)
-	if token := client.Connect(); token.Wait() && token.Error() != nil {
-		panic(token.Error())
-	} else {
-		fmt.Printf("Connected to server\n")
-	}
-	<-c
-}
-*/
 
 func main()  {
 	subscribeToMQTTTopic("tcp://localhost:1883","sub","test")
